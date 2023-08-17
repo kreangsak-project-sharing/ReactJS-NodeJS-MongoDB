@@ -11,33 +11,11 @@ router.use(apiReqLimiter);
 router
   .get("/getcounter/:id", userRegister.getCounter)
   .post(
-    "/thaismile",
+    "/test01",
     nonInvisibleTurnstileSites,
     userRegister.userEstablishment01
   )
-  .post("/nokair", nonInvisibleTurnstileSites, userRegister.userEstablishment03)
-  .post("/rop", nonInvisibleTurnstileSites, userRegister.userEstablishment04)
-  .post("/bmw", nonInvisibleTurnstileSites, userRegister.userEstablishment05)
-  .post(
-    "/bitkub-ba",
-    nonInvisibleTurnstileSites,
-    userRegister.userEstablishment06
-  )
-  .post(
-    "/bitkub-bbt",
-    nonInvisibleTurnstileSites,
-    userRegister.userEstablishment07
-  )
-  .post(
-    "/bitkub-bo",
-    nonInvisibleTurnstileSites,
-    userRegister.userEstablishment08
-  )
-  .post("/tg", nonInvisibleTurnstileSites, userRegister.userEstablishment09)
-  .post(
-    "/silver-voyage-club",
-    nonInvisibleTurnstileSites,
-    userRegister.userEstablishment10
-  );
+  .post("/test02", nonInvisibleTurnstileSites, userRegister.userEstablishment02)
+  .post("/test-03", nonInvisibleTurnstileSites, userRegister.userEstablishment03)
 
 module.exports = router;

@@ -1,4 +1,4 @@
-// Establishment Rop
+// Establishment02
 const mongoose = require("mongoose");
 
 // Define the schema
@@ -39,7 +39,7 @@ userSchema.pre("save", async function (next) {
     const counter = await mongoose
       .model("Counter")
       .findByIdAndUpdate(
-        { _id: "establishment04_id" },
+        { _id: "establishment02_id" },
         { $inc: { sequence_value: 1 } },
         { new: true, upsert: true }
       );
@@ -50,7 +50,7 @@ userSchema.pre("save", async function (next) {
       .padStart(2, "0");
 
     // Set the promotioncode of the new Establishment document
-    this.promotioncode = `ROPD${paddedCounterValue}`;
+    this.promotioncode = `TR${paddedCounterValue}`;
 
     // Continue to save
     next();
@@ -61,6 +61,6 @@ userSchema.pre("save", async function (next) {
 });
 
 // Create the project model
-const Establishment04 = mongoose.model("Establishment04", userSchema);
+const Establishment04 = mongoose.model("Establishment02", userSchema);
 
-module.exports = Establishment04;
+module.exports = Establishment02;

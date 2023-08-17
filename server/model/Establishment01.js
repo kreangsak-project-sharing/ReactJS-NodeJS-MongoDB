@@ -1,4 +1,4 @@
-// Establishment Thaismile1
+// Establishment01
 const mongoose = require("mongoose");
 
 // Define the schema

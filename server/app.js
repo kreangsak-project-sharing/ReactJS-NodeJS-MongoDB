@@ -10,8 +10,18 @@ const path = require("path");
 const cors = require("cors");
 const allowedOrigins = require("./config/allowedOrigins");
 
+// Check error handler
+const errorHandler = require("./middleware/errorHandler");
+
+// Cookie
+const cookieParser = require("cookie-parser");
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// app.use(cors());
+// app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+// app.use(cors({ origin: "https://discoverthenewyoudeals.com", credentials: true }));
 
 app.use(
   cors({
@@ -32,7 +42,12 @@ app.use(
   })
 );
 
-app.use("/user", require("./routes/userRouter"));
+app.use(errorHandler);
+app.use(cookieParser());
+
+app.use("/auth", require("./routes/authRouter"));
+app.use("/api", require("./routes/regisRouter"));
+app.use("/getdata", require("./routes/userRouter"));
 
 app.get("/", (req, res) => {
   res.json({ message: "Ok" });

@@ -61,6 +61,6 @@ userSchema.pre("save", async function (next) {
 });
 
 // Create the project model
-const Establishment04 = mongoose.model("Establishment02", userSchema);
+const Establishment02 = mongoose.model("Establishment02", userSchema);
 
 module.exports = Establishment02;

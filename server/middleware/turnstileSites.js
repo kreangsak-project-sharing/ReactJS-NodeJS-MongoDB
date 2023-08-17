@@ -10,6 +10,7 @@ const nonInvisibleTurnstileSites = async (req, res, next) => {
   // console.log(ip);
 
   const formData = {
+    // NONINVISIBLE_TURNSTILE_SECRET_KEY=0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     secret: process.env.NONINVISIBLE_TURNSTILE_SECRET_KEY,
     response: token,
     remoteip: ip,

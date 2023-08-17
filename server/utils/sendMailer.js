@@ -16,15 +16,13 @@ const sendMail = (email, promotioncode, packages, discountmessage) => {
   });
 
   let message = {
-    from: `"Discover the New You" <${process.env.NODE_USEREMAIL}>`,
+    from: `"Project" <${process.env.NODE_USEREMAIL}>`,
     to: email,
     subject: "Successfully registered",
     html: `<p><strong>เรียน ท่านสมาชิก</strong></p><br>
                 <p>โค้ดส่วนลดของคุณคือ ${promotioncode}</p>
                 <p>${discountmessage}</p>
                 <p>${packages}</p><br>
-                <p>ท่านสามารถจองซื้อแพ็กเกจกับสถานประกอบการ (กรุณาจองล่วงหน้า)</p>
-                <p>ใช้สิทธิได้ภายในวันที่ 1 สิงหาคม - 31 ตุลาคม 2566</p>
                 `,
   };
 

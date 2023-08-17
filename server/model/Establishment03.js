@@ -1,4 +1,4 @@
-// Establishment Bitkubbbt
+// Establishment03
 const mongoose = require("mongoose");
 
 // Define the schema
@@ -39,7 +39,7 @@ userSchema.pre("save", async function (next) {
     const counter = await mongoose
       .model("Counter")
       .findByIdAndUpdate(
-        { _id: "establishment07_id" },
+        { _id: "establishment03_id" },
         { $inc: { sequence_value: 1 } },
         { new: true, upsert: true }
       );
@@ -50,7 +50,7 @@ userSchema.pre("save", async function (next) {
       .padStart(2, "0");
 
     // Set the promotioncode of the new Establishment document
-    this.promotioncode = `BBT${paddedCounterValue}`;
+    this.promotioncode = `TB${paddedCounterValue}`;
 
     // Continue to save
     next();
@@ -61,6 +61,6 @@ userSchema.pre("save", async function (next) {
 });
 
 // Create the project model
-const Establishment07 = mongoose.model("Establishment07", userSchema);
+const Establishment03 = mongoose.model("Establishment03", userSchema);
 
-module.exports = Establishment07;
+module.exports = Establishment03;

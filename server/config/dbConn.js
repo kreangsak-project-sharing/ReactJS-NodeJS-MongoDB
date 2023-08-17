@@ -14,6 +14,7 @@ const initializeCounters = async () => {
   }
 };
 
+// MongoDB connect
 exports.connectDB = () => {
   try {
     mongoose
